@@ -1,14 +1,3 @@
-<div>
-	<h1>Calgary Hacks 2022</h1>
-</div>
-
-<style lang="scss">
-	div {
-		height: 100vh;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	}
-	h1 {
-	}
-</style>
+<a href="#" class="container-fluid text-decoration-none">
+	<h1 class="h1 bg-primary text-white">Balancr</h1>
+</a>
