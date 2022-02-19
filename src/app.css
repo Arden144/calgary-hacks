@@ -6,3 +6,14 @@ html, body {
 * {
 	box-sizing: border-box;
 }
+
+.bg-pink {
+	background-color: #FFB6C1;
+	font-weight: normal;
+}
+
+#h-2 {
+	font-size: 25px;
+}
+
+
