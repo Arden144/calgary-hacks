@@ -1,3 +1,15 @@
+<script lang="ts">
+	import { browser } from '$app/env';
+	import { goto } from '$app/navigation';
+	import { auth } from '../firebase';
+
+	if (browser) {
+		if (auth.currentUser === null) {
+			goto('/login', { replaceState: true });
+		}
+	}
+</script>
+
 <nav class="navbar navbar-expand-lg navbar-light bg-primary" style="background-color: #225AEA;">
 	<div class="container-fluid">
 		<!-- <a href="#" class="navbar-brand">s
