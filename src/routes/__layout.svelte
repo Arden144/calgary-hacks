@@ -9,11 +9,12 @@
 	} from 'firebase/auth';
 	import '../app.scss';
 	import { auth } from '../firebase';
+	import { slide } from 'svelte/transition';
 
 	if (browser) {
 		onAuthStateChanged(auth, (user) => {
 			if (!user) {
-				goto('/login', { replaceState: true });
+				// goto('/login', { replaceState: true });
 			}
 		});
 
@@ -46,16 +47,29 @@
 			<span class="navbar-toggler-icon" />
 		</button>
 		{#if navbar}
-			<div class="navbar-collapse">
-				<div class="navbar-nav ms-auto">
-					<a href="#" class="nav-item nav-link text-white" on:click={onSignOut}>Sign Out</a>
+			<div transition:slide class="navbar-collapse">
+				<div class="container">
+					<div class="row">
+						<div class="col-3 navbar-nav ms-auto">
+							<a href="#" class="nav-item nav-link text-white">Overview</a>
+						</div>
+						<div class="col-3 navbar-nav ms-auto">
+							<a href="/quotes" class="nav-item nav-link text-white">Quotes</a>
+						</div>
+						<div class="col-3 navbar-nav ms-auto">
+							<a href="#" class="nav-item nav-link text-white">Tasks</a>
+						</div>
+						<div class="col-3 navbar-nav ms-auto">
+							<a href="#" class="nav-item nav-link text-white" on:click={onSignOut}>Sign Out</a>
+						</div>
+					</div>
 				</div>
 			</div>
 		{/if}
 	</div>
 </nav>
 
-<div class="d-flex flex-column flex-shrink-0 p-3 bg-light" style="width: 280px;">
+<!-- <div class="d-flex flex-column flex-shrink-0 p-3 bg-pink" style="width: 280px;">
 	<ul class="nav nav-pills flex-column mb-auto">
 		<li class="nav-item">
 			<a href="#" class="nav-link active" aria-current="page">
@@ -88,6 +102,6 @@
 			</a>
 		</li>
 	</ul>
-</div>
+</div> -->
 
 <slot />
