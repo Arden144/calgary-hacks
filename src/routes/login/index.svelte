@@ -1,9 +1,11 @@
 <script lang="ts">
+	import { goto } from '$app/navigation';
 	import {
 		createUserWithEmailAndPassword,
 		GoogleAuthProvider,
 		signInWithRedirect
 	} from 'firebase/auth';
+	import googleLogo from '../../../static/googlelogo.png';
 	import { auth } from '../../firebase';
 
 	let email: string;
@@ -14,6 +16,7 @@
 	const onEmailSubmit = async () => {
 		try {
 			await createUserWithEmailAndPassword(auth, email, password);
+			await goto('/');
 		} catch (err) {
 			failed = true;
 			console.log(err);
@@ -44,7 +47,7 @@
 								class="btn btn-light btn-floating mx-1"
 								on:click={onFederatedSignIn}
 							>
-								<img src="static\googlelogo.png" alt="Google" width="25px" />
+								<img src={googleLogo} alt="Google" width="25px" />
 							</button>
 						</div>
 

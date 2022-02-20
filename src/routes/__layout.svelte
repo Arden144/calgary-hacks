@@ -7,7 +7,7 @@
 	if (browser) {
 		onAuthStateChanged(auth, (user) => {
 			if (!user) {
-				// goto('/login', { replaceState: true });
+				goto('/login', { replaceState: true });
 			}
 		});
 
