@@ -4,7 +4,7 @@
 		GoogleAuthProvider,
 		signInWithRedirect
 	} from 'firebase/auth';
-	import { auth } from '../firebase';
+	import { auth } from '../../firebase';
 
 	let email: string;
 	let password: string;
