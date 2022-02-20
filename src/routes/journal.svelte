@@ -40,6 +40,31 @@
 	<div>{journal.content}</div>
 {/each}
 
-<textarea bind:value={content} name="journal" cols="30" rows="10" />
-
-<button on:click={submit} type="submit">Submit</button>
+<body class="container vh-100 bg-pink">
+	<div class="mb-3">
+		<div class="row">
+			<label for="exampleFormControlTextarea1" class="form-label p-3"
+				><p class="h5 text-center">Try to jotting down your feelings.</p>
+			</label>
+		</div>
+		<section class="row">
+			<div class="row">
+				<div class="col-3" />
+				<textarea
+					bind:value={content}
+					name="journal"
+					cols="10"
+					rows="5"
+					class="form-control m-3 col-7"
+					id="exampleFormControlTextarea1"
+				/>
+			</div>
+			<div class="col-5" />
+			<button
+				on:click={submit}
+				type="submit"
+				class=" col-3 bg-primary text-white btn btn-primary btn-md">Submit</button
+			>
+		</section>
+	</div>
+</body>
