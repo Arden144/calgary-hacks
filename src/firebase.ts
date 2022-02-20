@@ -4,7 +4,7 @@ import { getFirestore } from 'firebase/firestore';
 
 const config = {
   apiKey: "AIzaSyBZzS3a6H8jcxQXbAQnMKMXQs0kU0WvdRs",
-  authDomain: "calgaryhacks-aaa07.firebaseapp.com",
+  authDomain: "calgary-hacks.vercel.app",
   projectId: "calgaryhacks-aaa07",
   storageBucket: "calgaryhacks-aaa07.appspot.com",
   messagingSenderId: "38940125148",
