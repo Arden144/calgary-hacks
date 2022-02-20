@@ -1,15 +1,12 @@
 <script lang="ts">
-	var slider = document.getElementById('range');
-	var output = document.getElementById('value');
-	var outputVarNo = document.getElementById('outputVar');
+	let value = 50;
 
-	let update = () => (output.innerHTML = slider.value);
-
-	slider.addEventListener('input', update);
-	update();
+	const onSubmit = async () => {
+		// TODO: do something
+	};
 </script>
 
-<body>
+<section>
 	<blockquote class="blockquote blockquote-custom bg-white p-5 shadow rounded">
 		<div class="container p-3">
 			<h1 class="h3 text-center bg-pink p-3 rounded">How are you feeling today?</h1>
@@ -18,20 +15,21 @@
 					<p>Not great</p>
 				</div>
 				<div class=" col-6 slidecontainer p-1">
-					<input type="range" min="1" max="100" value="50" class="slider" id="range" />
-					Value: <span id="value" />
-					Value: <span id="outputVar" />
+					<input type="range" min="1" max="100" bind:value class="slider" id="range" />
+					<p>Value: {value}</p>
 				</div>
 				<div class="col-3">
 					<p>Very great</p>
 				</div>
 			</div>
 			<div class=" col-6 text-center">
-				<button class="bg-primary text-white btn btn-primary btn-md">Submit</button>
+				<button class="bg-primary text-white btn btn-primary btn-md" on:submit={onSubmit}
+					>Submit</button
+				>
 			</div>
 		</div>
 	</blockquote>
-</body>
+</section>
 
 <style>
 	.slider {

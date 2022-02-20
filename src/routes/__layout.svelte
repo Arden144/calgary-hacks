@@ -1,15 +1,14 @@
 <script lang="ts">
 	import { browser } from '$app/env';
-	import { goto } from '$app/navigation';
 	import {
 		getRedirectResult,
 		GoogleAuthProvider,
 		onAuthStateChanged,
 		signOut
 	} from 'firebase/auth';
+	import { slide } from 'svelte/transition';
 	import '../app.scss';
 	import { auth } from '../firebase';
-	import { slide } from 'svelte/transition';
 
 	if (browser) {
 		onAuthStateChanged(auth, (user) => {
@@ -51,7 +50,7 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-4 navbar-nav ms-auto">
-							<a href="/index" class="nav-item nav-link text-white">Overview</a>
+							<a href="/" class="nav-item nav-link text-white">Overview</a>
 						</div>
 						<div class="col-4 navbar-nav ms-auto">
 							<a href="/quotes" class="nav-item nav-link text-white">Quotes</a>

@@ -1,5 +1,7 @@
-<script>
+<script lang="ts">
 	import Quote from 'inspirational-quotes';
+
+	const quote = Quote.getQuote();
 </script>
 
 <body class="bg-pink">
@@ -18,10 +20,10 @@
 							<p class="h2 text-white">B</p>
 						</div>
 						<p class="mb-0 mt-2 font-italic">
-							{Quote.getRandomQuote()}
+							{quote.text}
 						</p>
 						<footer class="blockquote-footer pt-4 mt-4 border-top">
-							{Quote.getQuote().author}
+							{quote.author}
 						</footer>
 					</blockquote>
 				</div>
