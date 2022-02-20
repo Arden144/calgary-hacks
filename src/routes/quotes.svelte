@@ -1,7 +1,21 @@
-<script lang="ts">
-	import Quote from 'inspirational-quotes';
+<script context="module" lang="ts">
+	import type { Load } from '@sveltejs/kit';
 
-	const quote = Quote.getQuote();
+	export const load: Load = async () => {
+		const res = await fetch('https://api.quotable.io/random');
+		const { content, author } = await res.json();
+		return {
+			props: {
+				content,
+				author
+			}
+		};
+	};
+</script>
+
+<script lang="ts">
+	export let content: string;
+	export let author: string;
 </script>
 
 <body class="bg-pink">
@@ -20,10 +34,10 @@
 							<p class="h2 text-white">B</p>
 						</div>
 						<p class="mb-0 mt-2 font-italic">
-							{quote.text}
+							{content}
 						</p>
 						<footer class="blockquote-footer pt-4 mt-4 border-top">
-							{quote.author}
+							{author}
 						</footer>
 					</blockquote>
 				</div>
