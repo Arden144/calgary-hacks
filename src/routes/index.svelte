@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Quotes from 'inspirational-quotes'
 	import { browser } from '$app/env';
 	import { goto } from '$app/navigation';
 	import { getRedirectResult, GoogleAuthProvider, onAuthStateChanged } from 'firebase/auth';
@@ -7,7 +8,7 @@
 	if (browser) {
 		onAuthStateChanged(auth, (user) => {
 			if (!user) {
-				goto('/login', { replaceState: true });
+				// goto('/login', { replaceState: true });
 			}
 		});
 
@@ -77,3 +78,8 @@
 		</li>
 	</ul>
 </div>
+
+<!-- <div>{Quotes.getQuote({author:false}).text}</div>
+<div>{Quotes.getQuote({author:true}).author}</div> -->
+
+<div>{Quotes.getRandomQuote()}</div>
