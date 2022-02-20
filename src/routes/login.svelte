@@ -27,10 +27,10 @@
 </script>
 
 <section style="background-color: #FFB6C1;">
-	<section class="text-center" style="padding: 2em;">
+	<section class="text-center text-white" style="padding: 2em;">
 		<h1>Welcome to Balancr</h1>
 	</section>
-	<section class="vh-100" id="font">
+	<section class="vh-100 text-white" id="font">
 		<div class="container-fluid h-custom">
 			<div class="row d-flex justify-content-center align-items-center h-100">
 				<div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
@@ -41,10 +41,10 @@
 							<p class="lead fw-normal mb-0 me-3">Sign in with</p>
 							<button
 								type="button"
-								class="btn btn-primary btn-floating mx-1"
+								class="btn btn-light btn-floating mx-1"
 								on:click={onFederatedSignIn}
 							>
-								Google
+								<img src="static\googlelogo.png" alt="Google" width="25px" />
 							</button>
 						</div>
 
@@ -76,15 +76,13 @@
 							<button
 								type="button"
 								class="btn btn-primary btn-lg"
-								style="padding-left: 2.5rem; padding-right: 2.5rem;"
-								on:click={onEmailSubmit}
+								style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button
 							>
-								Login
-							</button>
 							<button
 								type="button"
 								class="btn btn-primary btn-lg"
-								style="padding-left: 2.5rem; padding-right: 2.5rem;">Sign Up</button
+								style="padding-left: 2.5rem; padding-right: 2.5rem;"
+								on:click={onEmailSubmit}>Sign Up</button
 							>
 						</div>
 					</form>
