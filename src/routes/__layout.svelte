@@ -50,16 +50,16 @@
 			<div transition:slide class="navbar-collapse">
 				<div class="container">
 					<div class="row">
-						<div class="col-3 navbar-nav ms-auto">
+						<div class="col-4 navbar-nav ms-auto">
 							<a href="/index" class="nav-item nav-link text-white">Overview</a>
 						</div>
-						<div class="col-3 navbar-nav ms-auto">
+						<div class="col-4 navbar-nav ms-auto">
 							<a href="/quotes" class="nav-item nav-link text-white">Quotes</a>
 						</div>
-						<div class="col-3 navbar-nav ms-auto">
+						<!-- <div class="col-3 navbar-nav ms-auto">
 							<a href="#" class="nav-item nav-link text-white">Tasks</a>
-						</div>
-						<div class="col-3 navbar-nav ms-auto">
+						</div> -->
+						<div class="col-4 navbar-nav ms-auto">
 							<a href="#" class="nav-item nav-link text-white" on:click={onSignOut}>Sign Out</a>
 						</div>
 					</div>

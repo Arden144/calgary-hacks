@@ -21,7 +21,7 @@
 							{Quote.getRandomQuote()}
 						</p>
 						<footer class="blockquote-footer pt-4 mt-4 border-top">
-							{Quote.getRandomQuote().from}
+							{Quote.getQuote().author}
 						</footer>
 					</blockquote>
 				</div>
