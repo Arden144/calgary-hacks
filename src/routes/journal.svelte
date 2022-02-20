@@ -54,7 +54,7 @@
 					bind:value={content}
 					name="journal"
 					cols="10"
-					rows="5"
+					rows="25"
 					class="form-control m-3 col-7"
 					id="exampleFormControlTextarea1"
 				/>
