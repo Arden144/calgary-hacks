@@ -20,7 +20,7 @@
 		}
 	};
 
-	const onFederatedSignIn = (type: string) => async () => {
+	const onFederatedSignIn = async () => {
 		const provider = new GoogleAuthProvider();
 		await signInWithRedirect(auth, provider);
 	};
@@ -39,7 +39,13 @@
 							class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start"
 						>
 							<p class="lead fw-normal mb-0 me-3">Sign in with</p>
-							<button type="button" class="btn btn-primary btn-floating mx-1"> Google </button>
+							<button
+								type="button"
+								class="btn btn-primary btn-floating mx-1"
+								on:click={onFederatedSignIn}
+							>
+								Google
+							</button>
 						</div>
 
 						<div class="divider d-flex align-items-center my-4">
@@ -52,6 +58,7 @@
 								type="email"
 								class="form-control form-control-lg"
 								placeholder="Enter a valid email address"
+								bind:value={email}
 							/>
 						</div>
 
@@ -61,6 +68,7 @@
 								type="password"
 								class="form-control form-control-lg"
 								placeholder="Enter password"
+								bind:value={password}
 							/>
 						</div>
 
@@ -68,8 +76,11 @@
 							<button
 								type="button"
 								class="btn btn-primary btn-lg"
-								style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button
+								style="padding-left: 2.5rem; padding-right: 2.5rem;"
+								on:click={onEmailSubmit}
 							>
+								Login
+							</button>
 							<button
 								type="button"
 								class="btn btn-primary btn-lg"
