@@ -1,8 +1,11 @@
 <script lang="ts">
+	import { goto } from '$app/navigation';
+
 	let value = 50;
 
 	const onSubmit = async () => {
-		// TODO: do something
+		if (value > 30) return;
+		await goto('/journal');
 	};
 </script>
 
@@ -23,9 +26,9 @@
 				</div>
 			</div>
 			<div class=" col-6 text-center">
-				<button class="bg-primary text-white btn btn-primary btn-md" on:submit={onSubmit}
-					>Submit</button
-				>
+				<button class="bg-primary text-white btn btn-primary btn-md" on:click={onSubmit}>
+					Submit
+				</button>
 			</div>
 		</div>
 	</blockquote>

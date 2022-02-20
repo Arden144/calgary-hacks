@@ -1,29 +1,28 @@
 <script lang="ts">
-	import { browser } from '$app/env';
+	import { goto } from '$app/navigation';
 	import {
 		getRedirectResult,
 		GoogleAuthProvider,
 		onAuthStateChanged,
 		signOut
 	} from 'firebase/auth';
+	import { onMount } from 'svelte';
 	import { slide } from 'svelte/transition';
 	import '../app.scss';
 	import { auth } from '../firebase';
 
-	if (browser) {
+	onMount(async () => {
 		onAuthStateChanged(auth, (user) => {
 			if (!user) {
-				// goto('/login', { replaceState: true });
+				goto('/login', { replaceState: true });
 			}
 		});
 
-		(async () => {
-			const result = await getRedirectResult(auth);
-			if (!result) return;
+		const result = await getRedirectResult(auth);
+		if (!result) return;
 
-			GoogleAuthProvider.credentialFromResult(result);
-		})();
-	}
+		GoogleAuthProvider.credentialFromResult(result);
+	});
 
 	const onSignOut = async () => {
 		await signOut(auth);
