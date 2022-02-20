@@ -1,5 +1,34 @@
+<script lang="ts">
+	import {
+		createUserWithEmailAndPassword,
+		getRedirectResult,
+		GoogleAuthProvider,
+		signInWithRedirect
+	} from 'firebase/auth';
+	import { auth } from '../firebase';
+
+	let email: string;
+	let password: string;
+
+	let failed = false;
+
+	const onEmailSubmit = async () => {
+		try {
+			await createUserWithEmailAndPassword(auth, email, password);
+		} catch (err) {
+			failed = true;
+			console.log(err);
+		}
+	};
+
+	const onFederatedSignIn = (type: string) => async () => {
+		const provider = new GoogleAuthProvider();
+		await signInWithRedirect(auth, provider);
+	};
+</script>
+
 <section style="background-color: rgba(255, 182, 193, 0.2);">
-	<a on:click|preventDefault href="#" class="container-fluid text-decoration-none">
+	<a href="/" class="container-fluid text-decoration-none">
 		<h1 class="text-black">Balancr</h1>
 	</a>
 	<div class="container py-5 h-100">
@@ -11,7 +40,7 @@
 							<div class="card-body p-md-5 mx-md-4">
 								<h4 class="mt-1 mb-5 pb-1">Sign into Account</h4>
 							</div>
-							<form class="">
+							<form>
 								<p>or use email account</p>
 								<div class="form-outline mb-4">
 									<input
