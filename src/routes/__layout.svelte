@@ -67,6 +67,12 @@
 	</div>
 </nav>
 
+<div>
+	<nav class="class">
+		<button />
+	</nav>
+</div>
+
 <!-- <div class="d-flex flex-column flex-shrink-0 p-3 bg-pink" style="width: 280px;">
 	<ul class="nav nav-pills flex-column mb-auto">
 		<li class="nav-item">
