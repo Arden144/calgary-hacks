@@ -1,3 +1,14 @@
+<script lang="ts">
+	var slider = document.getElementById('range');
+	var output = document.getElementById('value');
+	var outputVarNo = document.getElementById('outputVar');
+
+	let update = () => (output.innerHTML = slider.value);
+
+	slider.addEventListener('input', update);
+	update();
+</script>
+
 <body>
 	<blockquote class="blockquote blockquote-custom bg-white p-5 shadow rounded">
 		<div class="container p-3">
@@ -7,7 +18,9 @@
 					<p>Not great</p>
 				</div>
 				<div class=" col-6 slidecontainer p-1">
-					<input type="range" min="1" max="100" value="50" class="slider" id="myRange" />
+					<input type="range" min="1" max="100" value="50" class="slider" id="range" />
+					Value: <span id="value" />
+					Value: <span id="outputVar" />
 				</div>
 				<div class="col-3">
 					<p>Very great</p>
