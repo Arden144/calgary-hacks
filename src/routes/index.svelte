@@ -1,13 +1,25 @@
 <script lang="ts">
 	import { browser } from '$app/env';
 	import { goto } from '$app/navigation';
+	import { getRedirectResult, GoogleAuthProvider, onAuthStateChanged } from 'firebase/auth';
 	import { auth } from '../firebase';
 
 	if (browser) {
-		if (auth.currentUser === null) {
-			goto('/login', { replaceState: true });
-		}
+		onAuthStateChanged(auth, (user) => {
+			if (!user) {
+				goto('/login', { replaceState: true });
+			}
+		});
+
+		(async () => {
+			const result = await getRedirectResult(auth);
+			if (!result) return;
+
+			GoogleAuthProvider.credentialFromResult(result);
+		})();
 	}
+
+	let navbarOpen = false;
 </script>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-primary" style="background-color: #225AEA;">
@@ -16,19 +28,14 @@
 					<img src="images/logo.svg" height="28" alt="Brandlogo">
 				</a> -->
 		<div class="navbar-nav">
-			<a href="#" class="container-fluid text-decoration-none ">
+			<a href="/" class="container-fluid text-decoration-none ">
 				<h1 class="h1 bg-primary text-white title">Balancr</h1>
 			</a>
 		</div>
-		<button
-			type="button"
-			class="navbar-toggler"
-			data-bs-toggle="collapse"
-			data-bs-target="#navbarCollapse"
-		>
+		<button type="button" class="navbar-toggler" on:click={() => (navbarOpen = !navbarOpen)}>
 			<span class="navbar-toggler-icon" />
 		</button>
-		<div class="collapse navbar-collapse" id="navbarCollapse">
+		<div class="navbar-collapse" class:collapse={!navbarOpen}>
 			<div class="navbar-nav ms-auto">
 				<a href="#" class="nav-item nav-link text-white">Sign Out</a>
 			</div>

@@ -1,3 +1,31 @@
+<script lang="ts">
+	import {
+		createUserWithEmailAndPassword,
+		GoogleAuthProvider,
+		signInWithRedirect
+	} from 'firebase/auth';
+	import { auth } from '../firebase';
+
+	let email: string;
+	let password: string;
+
+	let failed = false;
+
+	const onEmailSubmit = async () => {
+		try {
+			await createUserWithEmailAndPassword(auth, email, password);
+		} catch (err) {
+			failed = true;
+			console.log(err);
+		}
+	};
+
+	const onFederatedSignIn = (type: string) => async () => {
+		const provider = new GoogleAuthProvider();
+		await signInWithRedirect(auth, provider);
+	};
+</script>
+
 <section style="background-color: #FFB6C1;">
 	<section class="text-center" style="padding: 2em;">
 		<h1>Welcome to Balancr</h1>
@@ -38,9 +66,5 @@
 				</div>
 			</div>
 		</div>
-		</div>
 	</section>
 </section>
-
-
-
