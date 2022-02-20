@@ -3,6 +3,7 @@
 	import {
 		createUserWithEmailAndPassword,
 		GoogleAuthProvider,
+		signInWithEmailAndPassword,
 		signInWithRedirect
 	} from 'firebase/auth';
 	import googleLogo from '../../../static/googlelogo.png';
@@ -13,9 +14,19 @@
 
 	let failed = false;
 
-	const onEmailSubmit = async () => {
+	const onCreateAccount = async () => {
 		try {
 			await createUserWithEmailAndPassword(auth, email, password);
+			await goto('/');
+		} catch (err) {
+			failed = true;
+			console.log(err);
+		}
+	};
+
+	const onLogin = async () => {
+		try {
+			await signInWithEmailAndPassword(auth, email, password);
 			await goto('/');
 		} catch (err) {
 			failed = true;
@@ -79,13 +90,14 @@
 							<button
 								type="button"
 								class="btn btn-primary btn-lg"
-								style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button
+								style="padding-left: 2.5rem; padding-right: 2.5rem;"
+								on:click={onLogin}>Login</button
 							>
 							<button
 								type="button"
 								class="btn btn-primary btn-lg"
 								style="padding-left: 2.5rem; padding-right: 2.5rem;"
-								on:click={onEmailSubmit}>Sign Up</button
+								on:click={onCreateAccount}>Sign Up</button
 							>
 						</div>
 					</form>

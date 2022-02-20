@@ -1,6 +1,12 @@
 <script lang="ts">
 	import { browser } from '$app/env';
-	import { getRedirectResult, GoogleAuthProvider, onAuthStateChanged } from 'firebase/auth';
+	import { goto } from '$app/navigation';
+	import {
+		getRedirectResult,
+		GoogleAuthProvider,
+		onAuthStateChanged,
+		signOut
+	} from 'firebase/auth';
 	import '../app.scss';
 	import { auth } from '../firebase';
 
@@ -18,6 +24,10 @@
 			GoogleAuthProvider.credentialFromResult(result);
 		})();
 	}
+
+	const onSignOut = async () => {
+		await signOut(auth);
+	};
 
 	let navbar = false;
 </script>
@@ -38,7 +48,7 @@
 		{#if navbar}
 			<div class="navbar-collapse">
 				<div class="navbar-nav ms-auto">
-					<a href="#" class="nav-item nav-link text-white">Sign Out</a>
+					<a href="#" class="nav-item nav-link text-white" on:click={onSignOut}>Sign Out</a>
 				</div>
 			</div>
 		{/if}
