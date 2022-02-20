@@ -1,41 +1,46 @@
-<section style="background-color: rgba(255, 182, 193, 0.2);">
-	<a on:click|preventDefault href="#" class="container-fluid text-decoration-none">
-		<h1 class="text-black">Balancr</h1>
-	</a>
-	<div class="container py-5 h-100">
+<section style="background-color: #FFB6C1;">
+	<section class="text-center" style="padding: 2em;">
+		<h1>Welcome to Balancr</h1>
+	</section>
+	<section class="vh-100" id="font">
+		<div class="container-fluid h-custom">
 		<div class="row d-flex justify-content-center align-items-center h-100">
-			<div class="col-xl-10">
-				<div class="card rounded-3 text-black">
-					<div class="row g-0">
-						<div class="col-lg-6">
-							<div class="card-body p-md-5 mx-md-4">
-								<h4 class="mt-1 mb-5 pb-1">Sign into Account</h4>
-							</div>
-							<form class="">
-								<p>or use email account</p>
-								<div class="form-outline mb-4">
-									<input
-										type="email"
-										id="form2Example11"
-										class="form-control"
-										placeholder="Phone number or email address"
-									/>
-									<label class="form-label" for="form2Example11">Email</label>
-								</div>
-								<div class="form-outline mb-4">
-									<input type="password" id="form2Example22" class="form-control" />
-									<label class="form-label" for="form2Example22">Password</label>
-								</div>
-
-								<div class="d-flex align-items-center justify-content-center pb-4">
-									<p class="mb-0 me-2">Don't have an account?</p>
-									<button type="button" class="btn btn-outline-danger">Sign Up</button>
-								</div>
-							</form>
-						</div>
-					</div>
+			<div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+			<form>
+				<div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
+				<p class="lead fw-normal mb-0 me-3">Sign in with</p>
+				<button type="button" class="btn btn-primary btn-floating mx-1">
+					Google
+				</button>
+				</div>
+	
+				<div class="divider d-flex align-items-center my-4">
+				<p class="text-centermx-3 mb-0">Or use email</p>
+				</div>
+	
+				<!-- Email input -->
+				<div class="form-outline mb-4">
+				<input type="email" class="form-control form-control-lg"
+					placeholder="Enter a valid email address" />
+				</div>
+	
+				<!-- Password input -->
+				<div class="form-outline mb-3">
+				<input type="password" class="form-control form-control-lg"
+					placeholder="Enter password" />
+				</div>
+	
+				<div class="text-center text-lg-start mt-4 pt-2">
+					<button type="button" class="btn btn-primary btn-lg"
+					style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
+					<button type="button" class="btn btn-primary btn-lg"
+					style="padding-left: 2.5rem; padding-right: 2.5rem;">Sign Up</button>
 				</div>
 			</div>
 		</div>
-	</div>
+		</div>
+	</section>
 </section>
+
+
+
