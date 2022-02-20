@@ -44,7 +44,7 @@
 	<div class="mb-3">
 		<div class="row">
 			<label for="exampleFormControlTextarea1" class="form-label p-3"
-				><p class="h5 text-center">Try to jotting down your feelings.</p>
+				><p class="h5 text-center">Try jotting down your feelings.</p>
 			</label>
 		</div>
 		<section class="row">
