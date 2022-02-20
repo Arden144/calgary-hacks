@@ -51,7 +51,7 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-3 navbar-nav ms-auto">
-							<a href="#" class="nav-item nav-link text-white">Overview</a>
+							<a href="/index" class="nav-item nav-link text-white">Overview</a>
 						</div>
 						<div class="col-3 navbar-nav ms-auto">
 							<a href="/quotes" class="nav-item nav-link text-white">Quotes</a>

@@ -40,7 +40,7 @@
 	};
 </script>
 
-<section style="background-color: #FFB6C1;">
+<body style="background-color: #FFB6C1;">
 	<section class="text-center text-white" style="padding: 2em;">
 		<h1>Welcome to Balancr</h1>
 	</section>
@@ -105,4 +105,4 @@
 			</div>
 		</div>
 	</section>
-</section>
+</body>
