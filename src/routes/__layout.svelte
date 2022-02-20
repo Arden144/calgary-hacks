@@ -64,7 +64,7 @@
 			</a>
 		</li>
 		<li>
-			<a href="calendar.svelte" class="nav-link link-dark">
+			<a href="/calendar" class="nav-link link-dark">
 				<svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2" /></svg>
 				Calendar
 			</a>
